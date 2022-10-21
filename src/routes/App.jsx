@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import PasswordRecovery from "../pages/PasswordRecovery";
@@ -12,7 +12,22 @@ import Orders from "../pages/Orders";
 import NotFound from "../pages/NotFound";
 import "../styles/global.css";
 
-const App = () => {
+const App = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/my-account",
+    element: <MyAccount />,
+  },
+]);
+
+/* const App = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -29,6 +44,6 @@ const App = () => {
       </Routes>
     </BrowserRouter>
   );
-};
+}; */
 
 export default App;
